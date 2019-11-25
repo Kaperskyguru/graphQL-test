@@ -1,0 +1,3 @@
+type Query {
+    calculatePrice(type: String!, margin: Float!, exchangeRate: Float!): String
+}
