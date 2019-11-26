@@ -5,19 +5,20 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLFloat,
+    GraphQLEnumType,
     GraphQLSchema
 } = graphql;
 
-// type Query {
-//     calculatePrice(type: String!, margin: Float!, exchangeRate: Float!): String
-// }
-const CalculatePriceType = new GraphQLObjectType({
-    name: 'CalculatePrice',
-    fields: () => ({
-        amount: {
-            type: GraphQLString
-        }
-    })
+var Types = new GraphQLEnumType({
+    name: 'RGB',
+    values: {
+        BUY: {
+            value: 'buy'
+        },
+        SELL: {
+            value: 'sell'
+        },
+    }
 });
 
 const RootQuery = new GraphQLObjectType({
@@ -27,7 +28,7 @@ const RootQuery = new GraphQLObjectType({
             type: GraphQLString,
             args: {
                 type: {
-                    type: GraphQLString
+                    type: Types
                 },
                 margin: {
                     type: GraphQLFloat
