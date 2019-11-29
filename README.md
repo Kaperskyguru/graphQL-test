@@ -4,18 +4,11 @@
 
 ``` bash
 # install dependencies
-$ yarn install
+$ npm install
 
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+# serve at localhost:4000
+$ npm run start
 
 # Running Unit Test
-$ yarn test
+$ npm run test
 ```
